@@ -1,5 +1,5 @@
 ---
-title: "Ruán Kruger"
+title: "Ruan Kruger"
 role: "Senior Software Engineer"
 ---
 
