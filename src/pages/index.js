@@ -5,6 +5,7 @@ import { remark } from 'remark';
 import html from 'remark-html';
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
+import Image from 'next/image';
 import dynamic from 'next/dynamic';
 
 // Don't try to pre-load html2pdf - we'll import it on demand
@@ -88,9 +89,6 @@ export default function Home({ contentHtml, data }) {
         <meta name="description" content={`${data.title} - ${data.role} - Professional CV`} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
       </Head>
 
       {/* Navigation */}
@@ -123,6 +121,7 @@ export default function Home({ contentHtml, data }) {
       </nav>
 
       <main>
+
         {/* Hero section */}
         <section className="hero">
           <div className="hero-content">
@@ -136,7 +135,14 @@ export default function Home({ contentHtml, data }) {
             </div>
             <div className="hero-image">
               <div className="profile-image-container">
-                <img src="/profile-image.jpg" alt={data.title} className="profile-image" />
+                <Image 
+                  src="/profile-image.jpg" 
+                  alt={data.title} 
+                  className="profile-image"
+                  width={280}
+                  height={280}
+                  priority
+                />
               </div>
             </div>
           </div>
@@ -147,7 +153,7 @@ export default function Home({ contentHtml, data }) {
           <section id="profile" className="cv-section">
             <h3 className="section-title">Personal Profile</h3>
             <div className="card">
-              <p>Senior Software Engineer & Integration Expert with a strong technical background. Highly skilled in cloud architecture, microservices, and API development. Passionate about performance optimization, scalable architectures, and delivering robust software solutions.</p>
+              <p>Senior Full Stack Software Engineer & Integration Expert with a strong technical background. Highly skilled in cloud architecture, microservices, and API development. Passionate about performance optimization, scalable architectures, and delivering robust software solutions.</p>
             </div>
             
             <div className="contact-info">
@@ -199,7 +205,7 @@ export default function Home({ contentHtml, data }) {
               <div className="skill-card">
                 <h4>DevOps & CMS</h4>
                 <div className="skill-tags">
-                  <span>Sitefinity</span>
+                  <span>Sitecore</span>
                   <span>Episerver</span>
                   <span>Umbraco</span>
                   <span>PowerBI</span>
@@ -210,7 +216,6 @@ export default function Home({ contentHtml, data }) {
                 <h4>Testing & Performance</h4>
                 <div className="skill-tags">
                   <span>Unit Tests</span>
-                  <span>TDD</span>
                   <span>Code Optimization</span>
                 </div>
               </div>
@@ -219,9 +224,7 @@ export default function Home({ contentHtml, data }) {
                 <h4>Soft Skills</h4>
                 <div className="skill-tags">
                   <span>Technical Leadership</span>
-                  <span>Teamwork</span>
-                  <span>Propblem solving</span>
-                  <span>Adaptability</span>
+                  <span>Architecture Design</span>
                   <span>Mentorship</span>
                 </div>
               </div>
@@ -263,11 +266,10 @@ export default function Home({ contentHtml, data }) {
                 <div className="timeline-dot"></div>
                 <div className="timeline-date">2017 - 2021</div>
                 <div className="timeline-content">
-                  <h4>Software Engineer @ Responsive Studio</h4>
+                  <h4>Software Engineer @ Reactive, Studio 101J</h4>
                   <ul className="job-details">
                     <li>Built enterprise CMS projects for Old Mutual, Casino Royal, and Milan Fashion Week</li>
                     <li>Integrated Power BI analytics, Episerver CMS, and secure form data transfers</li>
-                    <li>Led API integrations for global companies (UK, Italy, South Africa)</li>
                   </ul>
                 </div>
               </div>
@@ -316,7 +318,7 @@ export default function Home({ contentHtml, data }) {
               </div>
             </div>
             <div className="closing-note">
-              <p>Interested in discussing opportunities? Let's connect! 🚀</p>
+              <p>Interested in discussing opportunities? Let&apos;s connect! 🚀</p>
             </div>
           </section>
         </div>
@@ -324,7 +326,7 @@ export default function Home({ contentHtml, data }) {
 
       <footer>
         <div className="footer-content">
-          <p>&copy; {new Date().getFullYear()} Ruán Kruger. All Rights Reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Ruan Kruger. All Rights Reserved.</p>
           <div className="social-links">
             <a href="https://linkedin.com/in/rkruger" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
